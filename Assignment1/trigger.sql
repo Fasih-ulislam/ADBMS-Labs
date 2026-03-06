@@ -49,6 +49,6 @@ begin
    insert into bookings values ( 99,
                                  1,
                                  1,
-                                 sysdate ); -- invalid
+                                 sysdate ); -- invalid and should be blocked
 end;
 /

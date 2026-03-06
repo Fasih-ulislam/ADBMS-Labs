@@ -24,7 +24,6 @@ begin
    dbms_output.put_line('==============================================');
    for rec in c_tutorials loop
 
-        -- Count bookings for this tutorial
       select count(*)
         into v_booking_count
         from bookings
@@ -43,7 +42,7 @@ begin
       dbms_output.put_line('Booked        : ' || v_booking_count);
       dbms_output.put_line('Slots Left    : ' || v_slots_left);
       if v_slots_left = 0 then
-         dbms_output.put_line('Status        : *** FULLY BOOKED ***');
+         dbms_output.put_line('Status        : Fully Booked');
       elsif v_slots_left <= 3 then
          dbms_output.put_line('Status        : Almost Full');
       else
@@ -61,7 +60,7 @@ exception
 end tutorial_attendance_report;
 /
 
--- TEST
+-- TESTING
 begin
    tutorial_attendance_report;
 end;
